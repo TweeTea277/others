@@ -1,0 +1,38 @@
+h1 {
+  background: lightyellow;
+}
+
+p {
+  margin: 0;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.supplement {
+  margin-top: 34px;
+}
+
+code {
+  background: rgb(237, 248, 217);
+}
+
+aside {
+  background: lightgray;
+  margin-top: 34px;
+}
+
+aside summary+p {
+  margin-top: 16px;
+}
+
+aside a+p {
+  margin-top: 16px;
+}
+
+.library-name {
+  font-weight: bold;
+}

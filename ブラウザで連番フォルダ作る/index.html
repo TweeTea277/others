@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ブラウザで連番フォルダ作るツール</title>
+
+  <!-- CDNからライブラリを読み込む場合 -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js"></script> -->
+
+  <!-- ライブラリの読み込み -->
+  <script src="js-library/jszip.min.js"></script>
+  <script src="js-library/FileSaver.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <h1>指定した範囲の数で連番フォルダ作るだけのツール</h1>
+
+
+  <div class="options">
+
+    <fieldset>
+      <legend>1:名前を入力</legend>
+      <p>Winのファイル名に</p>
+      <p>使用できないのは弾く</p>
+      <input type="text" id="folder-name">
+    </fieldset>
+
+
+
+    <fieldset>
+      <legend>2:連番の数を入力</legend>
+      <p>開始の数(0以上)</p>
+      <input type="text" id="start-number" value="0">
+      <p>終了の数(1000以下)</p>
+      <input type="text" id="end-number" value="10">
+    </fieldset>
+
+    <fieldset>
+      <legend>3:連番の形式を選択</legend>
+      <select id="select-type">
+        <option>名前_数字</option>
+        <option>数字_名前</option>
+        <option>名前数字</option>
+        <option>数字名前</option>
+        <option>名前(数字)</option>
+        <option>名前（数字）</option>
+        <option>名前[数字]</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <legend>4:保存するボタン</legend>
+      <button id="save-button">ここを押すと保存</button>
+    </fieldset>
+  </div>
+
+  <div class="supplement">
+    <p>※UNIXコマンドのブレース展開でも作れます</p>
+    <p>※なのでこのアプリの存在意義は正直微妙…</p>
+    <code>mkdir -p 入れるフォルダ/名前_{1..10}</code>
+  </div>
+
+
+  <aside>
+    <details>
+      <summary>使用しているライブラリ(MITライセンス)</summary>
+      <p class="library-name">JSZip.js(ZIPを作れるようにするやつ)</p>
+      <p>&emsp;&emsp;Copyright (c) 2009-2016 Stuart Knightley, David Duponchel, Franz Buchinger, António Afonso</p>
+
+      <a href="https://github.com/Stuk/jszip">https://github.com/Stuk/jszip</a>
+
+      <p class="library-name">FileSaver.js(作ったZIPを簡単に保存するやつ)</p>
+      <p>&emsp;&emsp;Copyright © 2016 Eli Grey.</p>
+      <a href="https://github.com/eligrey/FileSaver.js">https://github.com/eligrey/FileSaver.js</a>
+
+    </details>
+  </aside>
+  <script src="main.js"></script>
+</body>
+
+</html>
